@@ -26,8 +26,7 @@
         <header class="container">
             <img src="logo.png" alt="logo">
             <div>
-                <select class="form-select">
-                    <option selected>visualizza</option>
+                <select class="form-select" v-model="done">
                     <option value="">tutti i sintomi</option>
                     <option value="true">i tuoi sintomi</option>
                     <option value="false">sintomi assenti</option>
@@ -39,10 +38,10 @@
 
             <h1 class="text-capitalize text-center ">
                 lista dei sintomi d' ansia fisico </h1>
-            <p> </p>
+            <p>  Questi sono alcuni sintomi</p>
             <!-- ---- lista --- -->
             <ul class="list-group ">
-                <li class=" list-group-item " v-for="(item,index) in todo" :key="item.id">
+                <li class=" list-group-item " v-for="(item,index) in cloneTodo" :key="item.id">
                     <i class="fa-solid fa-circle-minus pointer me-2 " @click="removeItem(item.id)"></i>
                     <span class="pointer" :class="{'text-decoration-line-through' : item.done}"
                         @click="toggleDone(item.id)">

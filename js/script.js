@@ -5,6 +5,7 @@ createApp({
         return {
             todo,
             itemText:'',
+            done:'',
         }
     },
     methods:{
@@ -49,6 +50,18 @@ createApp({
         }
     },
     computed: {
-    
+        cloneTodo(){
+            return this.todo.filter((el)=>{
+                if(this.done === ''){
+                    return true
+                };
+                if(this.done ==='true'){
+                    return el.done == true;
+                };
+                if(this.done ==='false'){
+                    return el.done == false;
+                }
+            })
+        }
     }
 }).mount('#app')
