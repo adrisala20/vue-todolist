@@ -8,7 +8,12 @@ createApp({
         }
     },
     methods:{
-
+        toggleCheck(){
+            if(item){
+                item.check = !item.check
+            }
+            
+        }
     },
     computed: {
     
