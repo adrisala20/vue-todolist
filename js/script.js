@@ -12,7 +12,10 @@ createApp({
             const item = this.todo.find((el) => {
                return el.id === id
             });
-            console.log(item)
+            
+            if(item){
+                item.done =!item.done;
+            }
         }
     },
     computed: {
