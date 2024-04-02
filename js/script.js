@@ -4,7 +4,7 @@ createApp({
     data(){
         return {
             todo,
-            
+            itemText:'',
         }
     },
     methods:{
@@ -27,6 +27,24 @@ createApp({
                 console.log(index)
             }
             console.log(index)
+        },
+        addItem(){
+            const newItem= {
+                id:null,
+                text:'',
+                done:false    
+            }
+
+            //generare un id
+            let nextId = 0;
+            this.todo.forEach((el) => {
+                if(nextId < this.todo.id){
+                    nextId = el.id;
+                }
+            });
+            console.log(nextId)
+            newItem.id = nextId +1
+            this.todo.push(newItem)
         }
     },
     computed: {
