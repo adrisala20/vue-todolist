@@ -54,7 +54,7 @@
                 <h2>hai altri sintomi? </h2>
                 <div class="mb-3">
                     <label for="newitem" class="form-label">Condividi i tuoi sintomi</label>
-                    <input type="text" class="form-control " id="newitem" v-model="itemText">
+                    <input type="text" class="form-control " id="newitem" v-model="itemText" @keyup.enter="addItem()">
                     <button class="btn btn-primary my-3" @click="addItem()">
                         Aggiungi alla lista</button>
                 </div>

@@ -31,19 +31,20 @@ createApp({
         addItem(){
             const newItem= {
                 id:null,
-                text:'',
+                text:this.itemText,
                 done:false    
             }
 
             //generare un id
             let nextId = 0;
             this.todo.forEach((el) => {
-                if(nextId < this.todo.id){
+                if(nextId < el.id){
                     nextId = el.id;
                 }
             });
             console.log(nextId)
             newItem.id = nextId +1
+            this.itemText ='';
             this.todo.push(newItem)
         }
     },
