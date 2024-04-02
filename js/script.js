@@ -18,10 +18,14 @@ createApp({
             }
         },
         removeItem(id){
-            const item =this.todo.findIndex((el)=>{
+            const index =this.todo.findIndex((el)=>{
                 return el.id === id;
             });
-            console.log(item)
+            //console.log(item)
+            if(index){
+                index.id.splice(index, 1);
+            }
+            console.log(index)
         }
     },
     computed: {
