@@ -8,10 +8,11 @@ createApp({
         }
     },
     methods:{
-        toggleCheck(){
+        toggleDone(item){
             if(item){
-                item.check = !item.check
+                item.done == !item.done;
             }
+          
             
         }
     },
