@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <!-- ---- header ---- -->
-        <header class="container">
+        <header class="container ">
             <img src="logo.png" alt="logo">
             <div>
                 <select class="form-select" v-model="done">
@@ -34,18 +34,20 @@
             </div>
         </header>
         <!-- --- main ---- -->
-        <main class="container">
+        <main class="container ">
 
             <h1 class="text-capitalize text-center ">
                 lista dei sintomi d' ansia fisico </h1>
-            <p>  Questi sono alcuni sintomi</p>
+            <p class="ms-1 mt-3 ">  Questi sono alcuni sintomi, puoi cancellare dalla lista quelli che non ti appartengono,cliccando nell'icona a destra. <br>
+                Se provi altro che non è presente nella lista aggiungilo nella cassella un basso
+            </p>
             <!-- ---- lista --- -->
-            <ul class="list-group ">
-                <li class=" list-group-item " v-for="(item,index) in cloneTodo" :key="item.id">
-                    <i class="fa-solid fa-circle-minus pointer me-2 " @click="removeItem(item.id)"></i>
+            <ul class="list-group">
+                <li class=" list-group-item d-flex justify-content-between " v-for="(item,index) in cloneTodo" :key="item.id">
                     <span class="pointer" :class="{'text-decoration-line-through' : item.done}"
                         @click="toggleDone(item.id)">
                         {{item.text}}</span>
+                    <i class="fa-solid fa-circle-minus pointer me-2 " @click="removeItem(item.id)"></i>
                 </li>
             </ul>
             <!-- --- input--- -->

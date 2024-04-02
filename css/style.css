@@ -3,7 +3,6 @@
 }
 /* general */
 header{
-    background-color: lightskyblue;
     margin: 2rem;
     height: 80px;
     display: flex;
@@ -11,16 +10,26 @@ header{
     align-items: center;
 }
 body {
-    background-color: lightblue;
+    background-image: url(../bg.img.png);
+    background-position: center;
+    background-size: contain;
 }
-main {
-    background-color: whitesmoke;
+main{
+    opacity: 0.8;
 }
+
 .pointer {
     cursor: pointer;
 }
 /* header */
 img {
-    width: 20%;
-    height: 60px;
+    width: 15%;
+    height: 50px;
+}
+/* main */
+h1{
+    margin-top: 90px;
+    font-weight: bolder;
+    color: black;
+
 }
