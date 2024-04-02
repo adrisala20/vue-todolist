@@ -5,6 +5,10 @@
 header{
     background-color: lightskyblue;
     margin: 2rem;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 body {
     background-color: lightblue;
@@ -14,4 +18,9 @@ main {
 }
 .pointer {
     cursor: pointer;
+}
+/* header */
+img {
+    width: 20%;
+    height: 60px;
 }

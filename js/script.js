@@ -8,12 +8,11 @@ createApp({
         }
     },
     methods:{
-        toggleDone(item){
-            if(item){
-                item.done == !item.done;
-            }
-          
-            
+        toggleDone(id){
+            const item = this.todo.find((el) => {
+               return el.id === id
+            });
+            console.log(item)
         }
     },
     computed: {

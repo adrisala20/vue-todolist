@@ -23,7 +23,7 @@
 <body>
    <div id="app">
     <header class="container">
-        <img src="" alt="">
+        <img src="logo.png" alt="logo">
     </header>
     <main class="container">
 
@@ -33,7 +33,7 @@
         <ul class="list-group ">
             <li class=" list-group-item " v-for="(item,index) in todo" :key="item.id">
                 <i class="fa-solid fa-circle-minus pointer me-2 "></i>
-                <span class="pointer" :class="{'text-decoration-line-through' : item.done}"  @click="toggleDone(item.done)">
+                <span class="pointer" :class="{'text-decoration-line-through' : item.done}"  @click="toggleDone(item.id)">
                     {{item.text}}</span>      
             </li>
         </ul>
