@@ -1,0 +1,14 @@
+.as-debug {
+    border: 1px solid red;
+}
+/* general */
+header{
+    background-color: lightskyblue;
+    margin: 2rem;
+}
+body {
+    background-color: lightblue;
+}
+main {
+    background-color: whitesmoke;
+}
