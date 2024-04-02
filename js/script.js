@@ -22,8 +22,9 @@ createApp({
                 return el.id === id;
             });
             //console.log(item)
-            if(index){
-                index.id.splice(index, 1);
+            if(index !== -1){
+                this.todo.splice(index, 1);
+                console.log(index)
             }
             console.log(index)
         }
