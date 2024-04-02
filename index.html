@@ -16,7 +16,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="js/script.js" defer></script>
+        <script src="js/script.js" type="module"></script>
     <title>Vue Todolist</title>
 </head>
 
@@ -27,10 +27,13 @@
     </header>
     <main class="container">
 
-        <h1 class="text-capitalize text-center ">  </h1>
+        <h1 class="text-capitalize text-center "> 
+            lista dei sintomi d' ansia fisico </h1>
         <p></p>
         <ul>
-            <li></li>
+            <li v-for="(item,index) in todo" :key="item,id">
+                <span>{{item.text}}</span>
+            </li>
         </ul>
     </main>
 
