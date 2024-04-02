@@ -25,6 +25,14 @@
     <!-- ---- header ---- -->
     <header class="container">
         <img src="logo.png" alt="logo">
+        <div>
+        <select class="form-select" >
+            <option selected>visualizza</option>
+            <option value="">tutti i sintomi</option>
+            <option value="true">i tuoi sintomi</option>
+            <option value="false">sintomi assenti</option>
+          </select>
+        </div>
     </header>
     <!-- --- main ---- -->
     <main class="container">
@@ -40,6 +48,8 @@
                     {{item.text}}</span>      
             </li>
         </ul>
+        <!-- --- select --- -->
+        
     </main>
 
 
