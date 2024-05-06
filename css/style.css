@@ -13,6 +13,8 @@ body {
     background-image: url(../bg.img.png);
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
+   
 }
 main{
     opacity: 0.8;

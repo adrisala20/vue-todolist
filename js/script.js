@@ -1,21 +1,29 @@
-import{todo} from './data.js';
 const {createApp}= Vue;
 createApp({
     data(){
         return {
-            todo,
+            todo:[],
             itemText:'',
             done:'',
+            apiUrl:'server.php'
         }
     },
     methods:{
+        getData(){
+            axios.get(this.apiUrl).then((res)=>{
+                this.todo=res.data;
+                console.log(res.data);
+            })
+        },
         toggleDone(id){
-            const item = this.todo.find((el) => {
+         const item = this.todo.find((el) => {
                return el.id === id
             });
-            
-            if(item){
-                item.done =!item.done;
+
+            if(item){  
+               item.done =!item.done;
+            } else{
+                alert('non esiste l\'id')
             }
         },
         removeItem(id){
@@ -63,5 +71,8 @@ createApp({
                 }
             })
         }
-    }
+    },
+    mounted(){
+        this.getData();
+    },
 }).mount('#app')
