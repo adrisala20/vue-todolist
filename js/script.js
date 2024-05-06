@@ -40,14 +40,14 @@ createApp({
         },
         addItem(){
             const newItem= {
+                id:'',
                 text:this.itemText,
-                done:false    
-            }
-            this.lastId +=1;
-
-            newItem.id = this.lastId;
+                done:'',    
+            };
+            this.lastId += 1;
             this.itemText ='';
-            this.todo.push(newItem);
+            newItem.id = this.lastId;
+         
 
             const data = new FormData();
             data.append ('id', newItem.id);
@@ -55,8 +55,10 @@ createApp({
             data.append('done', newItem.done);
 
             axios.post(this.apiUrl, data).then((res)=>{
-                console.log(res.data)
-            })
+                console.log(res.data);
+                this.todo = res.data;
+                this.lastId = this.todo.length -1;
+            });
         }
     },
     computed: {

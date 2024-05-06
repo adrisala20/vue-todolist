@@ -1,16 +1,16 @@
 <?php 
 $todoJson = file_get_contents("js/data.json");
 if(isset($_POST['id'])){
-    var_dump($_POST);
+    //var_dump($_POST);
     //converto il json in un array php
     $todo = json_decode($todoJson, true);
     $todoItem  =[
-        'id'=> $_POST['id'],
-        'itemText'=> $_POST['itemText'],
+        'id'=>(int) $_POST['id'],
+        'text'=> $_POST['text'],
         'done'=> $_POST['done'],
     ];
     //aggiungo il nuovo item
-    $todo [] = $todoItem;
+    $todo[] = $todoItem;
 
     //stampo 
 
@@ -18,5 +18,5 @@ if(isset($_POST['id'])){
     file_put_contents('data.json', $todoJson);
 }
 
-//header("Content-type: application/json");
-//echo $todoJson;
+header("Content-type: application/json");
+echo $todoJson;
