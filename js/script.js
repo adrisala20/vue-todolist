@@ -4,6 +4,7 @@ createApp({
         return {
             todo:[],
             itemText:'',
+            lastId : null,
             done:'',
             apiUrl:'server.php'
         }
@@ -39,22 +40,23 @@ createApp({
         },
         addItem(){
             const newItem= {
-                id:null,
                 text:this.itemText,
                 done:false    
             }
+            this.lastId +=1;
 
-            //generare un id
-            let nextId = 0;
-            this.todo.forEach((el) => {
-                if(nextId < el.id){
-                    nextId = el.id;
-                }
-            });
-            console.log(nextId)
-            newItem.id = nextId +1
+            newItem.id = this.lastId;
             this.itemText ='';
-            this.todo.push(newItem)
+            this.todo.push(newItem);
+
+            const data = new FormData();
+            data.append ('id', newItem.id);
+            data.append('text', newItem.text);
+            data.append('done', newItem.done);
+
+            axios.post(this.apiUrl, data).then((res)=>{
+                console.log(res.data)
+            })
         }
     },
     computed: {
