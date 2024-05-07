@@ -40,14 +40,19 @@ createApp({
         },
         addItem(){
             const newItem= {
-                id:'',
+                id:null,
                 text:this.itemText,
-                done:'',    
+                done:false,    
             };
-            this.lastId += 1;
-            this.itemText ='';
-            newItem.id = this.lastId;
-         
+            let nextId = 0;
+            this.todo.forEach((el)=>{
+                if(nextId < el.id){
+                    nextId = el.id;
+                }
+            });
+            newItem.id = nextId + 1;
+            this.itemText = ''
+            console.log(this.todo)
 
             const data = new FormData();
             data.append ('id', newItem.id);
